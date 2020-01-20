@@ -1,0 +1,237 @@
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?97zt1k');
+    src:  url('../fonts/icomoon.eot?97zt1k#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?97zt1k') format('truetype'),
+      url('../fonts/icomoon.woff?97zt1k') format('woff'),
+      url('../fonts/icomoon.svg?97zt1k#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .icon-instagram:before {
+    content: "\ea92";
+  }
+  .icon-twitter:before {
+    content: "\ea96";
+  }
+  .icon-github:before {
+    content: "\eab0";
+  }
+
+:root
+{
+    --enfasis: #3fc5f0;
+    --normal: #35495e;
+    --titulo: #1b262c;
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto";
+}
+
+/* Contenedor principal */
+.principal
+{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E0E5EC;
+
+    /* Controlador de tamaño de fuente (Para responsive) */
+    font-size: 16px;
+}
+
+/* Caja contendora del card */
+.contenedor
+{
+    /* border: 1px solid green; */
+    padding: 30px;
+    height: 150px;
+    width: 600px;
+    border-radius: 10px;
+
+    position: relative;
+    background-color: #E0E5EC;
+    box-shadow: 9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px  rgba(255,255,255, 0.5);
+}
+
+/* Estilos generales del titulo */
+.titulo
+{
+    display: inline-block;
+    /* border: 1px solid red; */
+    font-size: 2em; /* 32px (deseados) / 16px (fuente declarada) = 2*/
+    color: var(--titulo);
+}
+
+/* Color de enfasis a textos principales */
+.titulo span,
+.lista .elemento
+{
+    color: var(--enfasis);
+}
+
+/* estilo generales de la lista */
+.lista
+{
+    overflow: hidden;
+    display: inline-block;
+    /* border: 1px solid; */
+    /* La altura esta definida por= 36px de alto de linea del .titulo / 32px de fuente del titulo */
+    height: 1.125em;
+    /* El margin-bottom es para corregir que todos esten a la misma altura */
+    /* necesitaba solo 1px entonces= 1px / 32px de fuente del titulo =0,03125‬ */
+    margin-bottom: -.03125em;
+    line-height: 1em;
+    vertical-align: bottom;
+}
+
+/* Estilos de los elementos de la lista (li) */
+.elemento
+{
+    list-style: none;
+    margin: 1em 0;
+}
+
+/* elemento que sera de guia y los movera a todos */
+.elemento:first-child
+{
+    margin-top: 0;
+    animation-name: moverTexto;
+    animation-duration: 20s;
+    animation-delay: 1s;
+}
+
+/* Configuracion de la caja de enlaces */
+.redes
+{
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    /* border: 1px solid brown; */
+}
+
+/* Configuracion de los enlaces */
+.redes a
+{
+    text-decoration: none;
+    color: var(--normal);
+    font-size: 1.4em;
+    margin-left: .625em;
+    position: relative;
+    animation: reveal 1s;
+    animation-fill-mode: backwards;
+}
+
+/* quitamos el margen a quien no lo necesita en las redes  y configuramos el delay de los reveal*/
+.redes a:first-child
+{
+    margin-left: 0;
+}
+
+.redes a:nth-of-type(2)
+{
+    animation-delay: .2s;
+}
+
+.redes a:last-child
+{
+    animation-delay: .4s;
+}
+
+/* Animacion del texto */
+@keyframes moverTexto
+{
+    0%
+    {
+        margin-top: 0;
+    }
+    3%
+    {
+        margin-top: 0;
+    }
+    10%
+    {
+        margin-top: -2em;
+    }
+    13%
+    {
+        margin-top: -2em;
+    }
+    20%
+    {
+        margin-top: -4em;
+    }
+    23%
+    {
+        margin-top: -4em;
+    }
+    30%
+    {
+        margin-top: -6em;
+    }
+    33%
+    {
+        margin-top: -6em;
+    }
+    40%
+    {
+        margin-top: -8em;
+    }
+    43%
+    {
+        margin-top: -8em;
+    }
+    50%
+    {
+        margin-top: -10em
+    }
+    77%
+    {
+        margin-top: -10em
+    }
+    83%
+    {
+        margin-top: 0;
+    }
+    86%
+    {
+        margin-top: 0;
+    }
+}
+
+@keyframes reveal
+{
+    from
+    {
+        opacity: 0;
+        bottom: -20px;
+    }
+    to
+    {
+        opacity: 1;
+        bottom: 0;
+    }
+}
